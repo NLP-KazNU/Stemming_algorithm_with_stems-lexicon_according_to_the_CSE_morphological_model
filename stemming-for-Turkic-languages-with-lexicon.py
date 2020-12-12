@@ -1,14 +1,20 @@
 import re
+import os
+import xlrd, xlwt
 
 def splitting_by_words(text):
     result = re.findall(r'\w+', text)
     return result
 
 def sorting_affixes(file_name):
-    affixes_file = open(file_name, 'r', encoding="utf-8")
-    affixes_file = affixes_file.read()
-
-    affixes = splitting_by_words(affixes_file.lower())
+    affixes_wb = xlrd.open_workbook(affixes_file_name)
+    affixes_sh = affixes_wb.sheet_by_index(0)
+    affixes = []
+    for rownum in range(affixes_sh.nrows-1):
+        affix = affixes_sh.cell(rownum+1,0).value
+        if '\ufeff' in affix:
+            affix = affix.replace('\ufeff', '')
+        affixes.append(affix)
 
     sorted_affixes = sorted(affixes, key=len, reverse=True)
 
@@ -65,18 +71,21 @@ def stemming(tfile_name, affixes, sfile_name):
     return text_file
     
 
-affixes_file_name = "affixes.txt"
+affixes_file_name = input("Name of the affix file: ") #"affixes.xls"
 affixes = sorting_affixes(affixes_file_name)
 print(affixes)
 
-text_file_name = "text.txt"
-stems_file_name = "truestems.txt"
+text_file_name = input("Name of the text file: ") #"text.txt"
+stems_file_name = input("Name of the vocabulary of correct stems: ") #"truestems.txt"
 text = stemming(text_file_name, affixes, stems_file_name)
 print("\n")
 print(text)
 
-output_file_name = "results.txt"
+output_file_name = input("Name of the output file (result): ") #"results.txt"
 output_file = open(output_file_name, 'w', encoding="utf-8")
 output_file.write(text)
 output_file.close()
+
+print("The results of the stemming process are written to a file " + output_file_name + " and saved in the folder where this python file is located")
+
 
