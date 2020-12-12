@@ -50,4 +50,4 @@ Name of the output file (result): output_results.txt
 
 After executing these commands, an inscription is displayed on the screen where it says that the process was successfully completed and the results were saved
 
-The results of the stemming process are written to a file output_results.txt and saved in the folder where this python file is located
+'The results of the stemming process are written to a file output_results.txt and saved in the folder where this python file is located'
