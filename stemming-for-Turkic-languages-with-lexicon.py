@@ -42,6 +42,8 @@ def stem(word, affixes, sfile_name):
                             break
                     elif affix == '' or word_affix == '':
                             stems.append(word)
+    else:
+        stems.append(word)
                         
     return stems[0]
     
@@ -73,13 +75,13 @@ def stemming(tfile_name, affixes, sfile_name):
 
 affixes_file_name = input("Name of the affix file: ") #"affixes.xls"
 affixes = sorting_affixes(affixes_file_name)
-#print(affixes)
+print(affixes)
 
 text_file_name = input("Name of the text file: ") #"text.txt"
 stems_file_name = input("Name of the vocabulary of correct stems: ") #"truestems.txt"
 text = stemming(text_file_name, affixes, stems_file_name)
-#print("\n")
-#print(text)
+print("\n")
+print(text)
 
 output_file_name = input("Name of the output file (result): ") #"results.txt"
 output_file = open(output_file_name, 'w', encoding="utf-8")
