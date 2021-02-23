@@ -1,4 +1,5 @@
 # Stemming algorithm with stems-lexicon according to the CSE (Complete Set of Endings) morphology model
+Ualsher Tukeyev, Aliya Turganbayeva
 
 The difference between this algorithm and the previous lexicon-free stemming algorithm is: after the stem is selected, it will be additionally checked for the presence in the language stems' list.
 In the following, e(w) is the ending of analyzed word w, st(w) is the stem of w, L(w) is the length of w, L[e(w)] is the calculated length of the ending.
