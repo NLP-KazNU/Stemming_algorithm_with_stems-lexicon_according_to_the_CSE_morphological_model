@@ -71,7 +71,7 @@ def stemming(tfile_name, affixes, stopwords_file_name, sfile_name):
     #result = ' '.join(result_words)
     
     stem_text = {}
-    for word in res_text:
+    for word in result_words:
         stemm = stem(word, affixes, sfile_name)
         stem_text.update({word: stemm})
        
