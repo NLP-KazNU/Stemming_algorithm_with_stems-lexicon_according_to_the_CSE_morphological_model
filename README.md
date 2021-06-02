@@ -29,31 +29,27 @@ cd C: \ Users \ ASER \ Desktop \ myprogs \ stemming \ github
 
 3) run the python file specifying the file name:
 
-stemming-for-Turkic-languages.py
+Universal_Stemming_with_stems-lexicon_for_Turkic_Language.py
 
 4) then enter the name of the files that are requested to run the program
 
 4.1) the name of the text (.txt) file where the stop words is saved
 
-Name of the stop-words file: stop_words.txt
+Enter the name of the stop-words file: stop_words.txt
 
 4.2) the name of the excel (.xls) file where the affixes are saved
 
-Name of the affix file: affixes.xls
+Enter the name of the endings file: affixes.xls
 
 4.3) the name of the text (.txt) file where the source text is saved
 
-Name of the text file: text.txt
+Enter the name of the text file: text.txt
 
 4.4) the name of the text (.txt) file where the correct stems (stems) of words are saved
 
-Name of the vocabulary of correct stems: truestems.txt
-
-4.5) the name of the excel (.xls) file where you will write the result (text after the stemming process)
-
-Name of the output file (result): output_results.xls
+Enter the name of the vocabulary of correct stems: truestems.txt
 
 
 After executing these commands, an inscription is displayed on the screen where it says that the process was successfully completed and the results were saved
 
-'The results of the stemming process are written to a file output_results.xls and saved in the folder where this python file is located'
+'The results of the stemming process are written to a file "results.xls" and saved in the folder where this python file is located'
